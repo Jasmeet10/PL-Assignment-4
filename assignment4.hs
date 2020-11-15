@@ -2,6 +2,6 @@
 
 replace :: Int -> Int -> [a] -> [a]
 replace x y [] = []
-maxlist x y (k:xs) 
+replace x y (k:xs) 
         |x == k      =y
         |otherwise   = replace x y(xs)
