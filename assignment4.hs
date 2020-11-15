@@ -1,7 +1,7 @@
 --Question 1:
 
-replace :: Int -> Int -> [a] -> [a]
+replace :: Int -> Int -> [Int] -> Int
 replace x y [] = []
-replace x y (k:xs) 
+replace x y (k:ks) 
         |x == k      =y
-        |otherwise   = replace x y(xs)
+        |otherwise   = replace x y (ks)
