@@ -26,7 +26,7 @@ delete k lt = deletekth k k lt
 oddelem [z] = [z]
 oddelem (z:y:ys) = z:oddelem ys
 
-maxodd ::  [a] -> Int -> a
+maxodd ::  [a] -> Int
 maxodd [] = error "Empty List"
 maxodd [x] = x
 maxodd [x:xs]  = max x oddelem[xs]
