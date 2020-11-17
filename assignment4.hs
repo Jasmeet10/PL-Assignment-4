@@ -35,3 +35,11 @@ maxodd ::  [Int] -> Int
 maxodd [] = error "Empty List"
 maxodd [x] = x
 maxodd lt = maxodd' (oddelem lt)
+
+
+
+--test
+oddelem [] = []
+oddelem [z] = [z]
+oddelem (z:y:ys) = z:oddelem ys
+
