@@ -28,8 +28,7 @@ oddelem [z] = [z]
 oddelem (z:y:ys) = z:oddelem ys
 
 maxodd ::  [Int] -> Int
---maxi = oddelem lt
 maxodd [] = error "Empty List"
 maxodd [x] =  x
-maxodd (x:xs) = max x (maxodd(oddelem xs))
+maxodd lt = maximum (oddelem lt)
 
