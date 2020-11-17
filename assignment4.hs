@@ -34,4 +34,4 @@ maxodd' (t:ts) = max t (maxodd' ts)
 maxodd ::  [Int] -> Int
 maxodd [] = error "Empty List"
 maxodd [x] = x
-maxodd (x:xs) = maxodd' (oddelem xs)
+maxodd lt = maxodd' (oddelem lt)
