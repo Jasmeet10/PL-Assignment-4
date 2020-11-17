@@ -23,10 +23,6 @@ delete k lt = deletekth k k lt
 
 --Question 3:
 
-maxodd' :: [Int] -> Int
-maxodd' [] = error "Empty List"
-maxodd' (t:ts) = max t (maxodd' ts)
-
 oddelem [] = []
 oddelem [z] = [z]
 oddelem (z:y:ys) = z:oddelem ys
@@ -34,5 +30,5 @@ oddelem (z:y:ys) = z:oddelem ys
 maxodd ::  [Int] -> Int
 maxodd [] = error "Empty List"
 maxodd [x] = x
-maxodd lt = maxodd' (oddelem lt)
+maxodd lt = maxodd (oddelem lt)
 
