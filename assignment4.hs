@@ -32,3 +32,28 @@ maxodd [] = error "Empty List"
 maxodd [x] =  x
 maxodd lt = maximum (oddelem lt)
 
+--Question 4:
+
+union :: ([Int],[Int])->([Int])
+union(lt1,lt2)=(res) where
+	r=lt1 ++ lt2
+	res = delDup(r)
+
+delDup :: [Int] -> [Int]
+delDup [] = []
+delDup (x:xs) = x: (delDup(remove x xs))
+	where 
+		remove :: Int -> [Int] -> [Int]
+		remove x [] = []
+		remove x (y:ys)
+			| x==y = remove x ys
+			| otherwise = y:(remove x ys)
+                        
+                        
+-- Question 5:
+
+flatten :: [[Int]]->([Int])
+flatten(lt) = (res) where
+	h = head lt
+	l = last lt
+	res = h ++ l
