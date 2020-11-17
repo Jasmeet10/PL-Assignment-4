@@ -19,3 +19,14 @@ delete :: Int -> [a] -> [a]
 delete _ [] = []
 delete 1 (_:_) = []
 delete k lt = deletekth k k lt
+
+
+--Question 3:
+
+oddelem [z] = [z]
+oddelem (z:y:ys) = z:oddelem ys
+
+maxodd ::  [a] -> Int -> a
+maxodd [] = error "Empty List"
+maxodd [x] = x
+maxodd [x:xs]  = max x oddelem[xs]
