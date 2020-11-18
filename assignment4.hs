@@ -12,8 +12,8 @@ replace x y (k:ks)
 deletekth :: Int -> Int -> [a] -> [a]
 deletekth k t [] = []
 deletekth k t (x:xs)
-    | t == 1 = deletekth k k xs
-    | t > 1 = x : deletekth k (t-1) xs
+    | t == 1 	= deletekth k k xs
+    | otherwise = x : deletekth k (t-1) xs
 
 delete :: Int -> [a] -> [a]
 delete _ [] = []
