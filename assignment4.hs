@@ -34,20 +34,15 @@ maxodd lt = maximum (oddelem lt)
 
 --Question 4:
 
-union :: ([Int],[Int])->([Int])
-union(lt1,lt2)=(res) where
-	r=lt1 ++ lt2
-	res = delDup(r)
-
-delDup :: [Int] -> [Int]
-delDup [] = []
-delDup (x:xs) = x: (delDup(remove x xs))
-	where 
-		remove :: Int -> [Int] -> [Int]
-		remove x [] = []
-		remove x (y:ys)
-			| x==y = remove x ys
-			| otherwise = y:(remove x ys)
+removedups :: Eq a => [a] -> [a]
+removedups [] = []
+removedups (x:xs)
+    |elem x xs = removedups xs
+    |otherwise = x:removedups xs
+    
+    
+union :: (Eq a) => [a] -> [a] -> [a]
+union lt1 lt2 =  removedups (lt1 ++ lt2)
                         
                         
 -- Question 5:
